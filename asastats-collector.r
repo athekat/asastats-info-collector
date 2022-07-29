@@ -15,11 +15,13 @@ asadf$algos <- c(asadf$usd/asadf$algoprice)
 asadf$date <-format(Sys.time(), "%D")
 asadf <- select(asadf, date, usd, algoprice, algos)
 
-# write.csv(asadf, "asahistory.csv", row.names=FALSE) Luego de la primera no volver a ejecutar
+# Luego de la primera no volver a ejecutar
+# write.csv(asadf, "asahistory.csv", row.names=FALSE) 
 
 asahistory <- rbind(asahistory, asadf) 
 
 write.csv(asahistory, "asahistory.csv", row.names=FALSE)
 
+#Clean tmp files
 file.remove('results.txt')
 file.remove('download.txt')

@@ -1,7 +1,7 @@
 library(dplyr)
 library(tidyr)
 shell.exec("get-info.bat")
-
+Sys.sleep(10)
 asahistory <- read.csv("asahistory.csv") #La primera vez no se ejecuta.
 asadf <- read.delim2("results.txt", header = FALSE, sep = " ", dec = ".")
 
